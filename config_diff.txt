@@ -1,0 +1,22 @@
+23c23
+< # OPENCV_VERSION := 3
+---
+> OPENCV_VERSION := 3
+39,41c39,41
+< CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \
+< 		-gencode arch=compute_20,code=sm_21 \
+< 		-gencode arch=compute_30,code=sm_30 \
+---
+> #CUDA_ARCH := -gencode arch=compute_20,code=sm_20 \
+> #		-gencode arch=compute_20,code=sm_21 \
+> CUDA_ARCH :=	-gencode arch=compute_30,code=sm_30 \
+53c53
+< BLAS := atlas
+---
+> BLAS := open
+97,98c97,98
+< INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include
+< LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib
+---
+> INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
+> LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
